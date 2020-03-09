@@ -2,7 +2,6 @@
   Once you complete a problem, refresh ./nesting.html in your browser and check to see if the problem's test(s) are passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
-
   You can refresh the page at any time to re-run all the tests.
 */
 
@@ -50,7 +49,16 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+let employeeUpdater = () => {
+  for (let i = 0; i < employees.length; i++){
+    if (employees[i].firstName === "Theo"){
+      employees.splice(i,1)
+    } else if (employees[i].firstName === "Lorie"){
+      employees[i].department = "HR" 
+    } 
+  }
+  return employees
+}
 
 
 
@@ -68,7 +76,18 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+const removeDuplicates = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = arr.length - 1; j > i; j--) {
+      if (arr[i] === arr[j]){
+        arr.splice(j, 1)
+      }
+    }
+  }
+  return arr
+}
+
+removeDuplicates(workplaceAccidents)
 
 
 
@@ -96,9 +115,9 @@ var cat = {
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
-//Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+
+var grumpyActivity = 'eat food'
+var fluffy2ndFriend = 'Lazy Bones'
 
 
 
@@ -138,7 +157,18 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+const recordCleaner = (myCar) => {
+  for (i = 0; i < myCar.length; i++){
+    if (myCar.filter(e => myCar.accidents.atFaultForAccident)){
+      atFaultForAccident === false
+    }
+  }
+  return myCar
+}
+
+recordCleaner(myCar)
+
+console.log(myCar)
 
 
 
@@ -157,6 +187,18 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
-
-
+let looper = (arr) => {
+  let modifiedArr = []
+  for (let i = 0; i < arr.length; i++){
+    for (let j = arr.length - 1; j > 1; j--){
+      if (arr[i[j]] % 2 === 0){
+        arr[i[j]].splice(arr[i[j]], 1, "even")
+      } else {
+        arr[i[j]].splice(arr[i[j]], 1, "odd")
+      }
+    }
+  }
+  return modifiedArr
+}
+looper(numsArr)
+numsArr = modifiedArr
