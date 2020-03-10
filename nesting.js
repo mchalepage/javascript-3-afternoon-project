@@ -116,8 +116,8 @@ var cat = {
 */
 
 
-var grumpyActivity = 'eat food'
-var fluffy2ndFriend = 'Lazy Bones'
+var grumpyActivity = cat.catFriends[0].activities[1]
+var fluffy2ndFriend = cat.catFriends[1].name
 
 
 
@@ -157,10 +157,10 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-const recordCleaner = (myCar) => {
-  for (i = 0; i < myCar.length; i++){
-    if (myCar.filter(e => myCar.accidents.atFaultForAccident)){
-      atFaultForAccident === false
+const recordCleaner = () => {
+  for (i = 0; i < myCar.accidents.length; i++){
+    if (myCar.accidents[i].atFaultForAccident = true){
+      myCar.accidents[i].atFaultForAccident = false
     }
   }
   return myCar
@@ -187,18 +187,15 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-let looper = (arr) => {
-  let modifiedArr = []
-  for (let i = 0; i < arr.length; i++){
-    for (let j = arr.length - 1; j > 1; j--){
-      if (arr[i[j]] % 2 === 0){
-        arr[i[j]].splice(arr[i[j]], 1, "even")
+let looper = () => {
+  for (let i = 0; i < numsArr.length; i++){
+    for (let j = 0; j < numsArr[i].length; j++){
+      if (numsArr[i][j] % 2 === 0){
+        numsArr[i][j] = "even"
       } else {
-        arr[i[j]].splice(arr[i[j]], 1, "odd")
+        numsArr[i][j] = 'odd'
       }
     }
   }
-  return modifiedArr
+  return numsArr
 }
-looper(numsArr)
-numsArr = modifiedArr
